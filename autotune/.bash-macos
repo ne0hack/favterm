@@ -1,0 +1,22 @@
+echo Installing Homebrew...
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo Installing VIM...
+brew install vim
+
+echo Installing GIT...
+brew install git
+
+echo Copying a repository to work with VIM plugins...
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo Moving folders to the right places...
+mkdir -p ~/.vim/autoload/airline/
+cp -R colors/ ~/.vim/colors/
+cp -R airline/ ~/.vim/autoload/airline/
+cp .vimrc ~/.vimrc
+
+echo Updating VIM plugins...
+vim +PluginInstall +qall
+
+echo 🎉 All is ready! Now, when you run the vim command, it will open with the configuration installed. Enjoy 😄
