@@ -22,5 +22,9 @@ scope_test()
 print("In global scope:", spam)
 
 
-class Complex:
+class MyClass:
+    """A simple example class"""
+    i = 12345
 
+    def f(self):
+        return 'hello world'

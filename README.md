@@ -53,3 +53,12 @@ Let's see vim in action, just use this command
 ```bash
 vim example.py
 ```
+
+## Screenshots
+
+![example.py](./assets/codespace.jpg)
+
+
+![Airline Example 1](./assets/airline_example1.jpg)
+
+![Airline Example 2](./assets/airline_example2.jpg)
