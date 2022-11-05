@@ -1,95 +1,84 @@
-" ==== Vundle code ====
+" Created by Alekseev Danil 2022 (ᵔ◡ᵔ)
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" ==============================
+" General settings for all files
+" ==============================
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+filetype plugin indent on
+set nocompatible
+set backspace=indent,eol,start " enable backspace work
+set encoding=UTF-8
+syntax enable " turn on language highlight
+set noswapfile " remove the creation of .swp files
+set number " includes line numbering
+set ttimeoutlen=10 " reduce the delay in entering escape sequences
 
-" all of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+set t_Co=256 " this is how increase vim's color palette
 
-" ==== Vundle code ====
-
-set encoding=utf8
-
-" remove the creation of .swp files
-set noswapfile
-
-" adds the ability to work with the mouse in vim (uncomment if needed)
-"set mouse=a
-
-" includes line numbering
-set number
-
-" setting up tabs for Python
-au BufNewFile, BufRead *py
-    \ set tabstop=4
-    \ set softtabstop=0
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoident
-    \ set fileformat=unix
-
-" offset from the left edge
-set foldcolumn=2
-
-" enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" enable folding with the spacebar
-nnoremap <space> za
-
-" beautiful folding
-Plugin 'tmhedberg/SimpylFold'
-let g:SimpylFold_docstring_preview=1
+set foldcolumn=2 " offset from the left edge
 
 " to ignore case when searching
 set ignorecase
 set smartcase
 
-" highlights search results
-set hlsearch
+set hlsearch " highlights search results
 
-" installing the theme
-Plugin 'wojciechkepka/vim-github-dark'
-set background=dark
-colorscheme ghdark
+set clipboard^=unnamed,unnamedplus " system clipboards
 
-" turn on language highlight
-syntax enable 
+" install vim-plugin if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" this is how increase vim's color palette
-set t_Co=256
+" installing the plugins themselves
+call plug#begin('~/.vim/bundle')
+Plug 'wojciechkepka/vim-github-dark' " plugin with GitHub dark theme 
+Plug 'vim-airline/vim-airline' " plugin airline of our environment
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons' " plugin for correct display of icons in projects
+Plug 'preservim/nerdtree' " file system explorer (:NERDTree)
+Plug 'shime/vim-livedown' " for Markdown files compiling
+call plug#end()
 
-" system clipboards
-set clipboard=unnamed
+colorscheme ghdark " set environment theme
 
-" file system explorer ( to activate  :NERDTree or tap Ctrl-N key)
-Plugin 'preservim/nerdtree'
-nnoremap <C-n> :NERDTree<CR>
+let g:airline_theme='angr' " airline theme
+let g:Powerline_symbols='unicode' " unicode support
+let g:airline_powerline_fonts = 1 " enable support for Powerline fonts
+let g:airline_section_z = "%l/%L:%c" " custom cursor position graph
 
-" set vertical column according to PEP8
-set colorcolumn=80
-highlight ColorColumn ctermbg=8 guibg=lightgrey
+" if you are using vim via terminal, change the font in terminal settings
+" if you are using Vim via Gui change the name to your font
+" suitable fonts can be found here: https://github.com/ryanoasis/nerd-fonts
+if has("gui_running")
+    set guifont="Hack Regular Nerd Font Complete Mono":h14 " font name:size
+endif
 
-" quick commenting in python
-" press ,ic to insert comments and,rc to remove comments
-vmap ,ac :s/^/#/g<CR>:let @/ = ""<CR>
-map  ,ac :s/^/#/g<CR>:let @/ = ""<CR>
-vmap ,rc :s/^#//g<CR>:let @/ = ""<CR>
-map  ,rc :s/^#//g<CR>:let @/ = ""<CR>
+" assign a hotkey to open/close NERDTree (\t)
+nnoremap <leader>t :NERDTreeToggle<CR>
 
-" airline and set up theme
-Plugin 'itchyny/lightline.vim'
-set laststatus=2
-let g:lightline = {'colorscheme': 'ghdark'}
+
+" =======================
+" Formatting Python Files
+" =======================
+
+" setting up tabs for Python
+autocmd Filetype python
+    \ set tabstop=4 | " tabs in the file are formatted to spaces
+    \ set softtabstop=0 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set fileformat=unix |
+    \ set columns=80 " set vertical column according to PEP8 
+
+
+" ========================= 
+" Formatting markdown files
+" =========================
+
+" to preview the Markdown file, press the keyboard shortcut \md
+nnoremap <leader>md :LivedownToggle<CR>
+
