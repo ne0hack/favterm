@@ -66,7 +66,7 @@ set background=dark
 colorscheme ghdark
 
 " turn on language highlight
-syntax on
+syntax enable 
 
 " this is how increase vim's color palette
 set t_Co=256
