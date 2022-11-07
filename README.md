@@ -16,7 +16,7 @@ I like to work with the terminal and customize it, this repository contains most
 
 2. Move the `.zshrc` file to the user's directory with this command:
     ```bash
-    cp .zshrc ~/.zshrc
+    cp ./configs/.zshrc ~/.zshrc
     ```
 
 ### Vim 
@@ -24,7 +24,7 @@ I like to work with the terminal and customize it, this repository contains most
 
 2. After copy the `.vimrc` file to the directory with the user (this is how we show _vim_ our settings).
     ```bash
-    cp .vimrc ~/.vimrc
+    cp ./configs/.vimrc ~/.vimrc
     ```
 
 3. Install all required plugins.
@@ -32,13 +32,6 @@ I like to work with the terminal and customize it, this repository contains most
     vim +PlugInstall +qall
     ```
 4. _Installing the font._ This step is individual depending on the operating system and using you terminal vim or gui vim. You need to download [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (my favorite is _[Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))_ and if you are using a terminal, then change the font in the settings of the terminal itself, and if gui then change the font name to yours in the `.vimrc` file (comments are present). 
-
-##### New hotkeys in Vim
-Added a couple of hotkeys from plugins
-
-- `\+m+d` - open compiled markdown file.
-- `Ctrl+t` - open file manager on the right (NERDTree)
-
 
 🎉 All is ready! Now, when you run the `vim` command, it will open with the configuration installed. Enjoy 😄
 
