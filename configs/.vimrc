@@ -40,8 +40,9 @@ Plug 'vim-airline/vim-airline' " plugin airline of our environment
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons' " plugin for correct display of icons in projects
 Plug 'preservim/nerdtree' " file system explorer (:NERDTree)
-Plug 'shime/vim-livedown' " for Markdown files compiling
 Plug 'tpope/vim-fugitive' " to work with git
+Plug 'tpope/vim-commentary' " allows to comment out the code (with the gcc command) 
+Plug 'shime/vim-livedown' " for Markdown files compiling
 call plug#end()
 
 " set environment dark theme
