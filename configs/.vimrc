@@ -2,7 +2,6 @@
 
 
 " -------- General --------
-
 filetype plugin indent on
 set nocompatible
 set backspace=indent,eol,start " enable backspace work
@@ -52,6 +51,9 @@ call plug#end()
 
 " set environment dark theme
 colorscheme challenger_deep 
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
 let g:airline_theme='angr' " airline theme
 let g:Powerline_symbols='unicode' " unicode support
