@@ -1,9 +1,7 @@
 " Created by Alekseev Danil 2022 (ᵔ◡ᵔ)
 
 
-" ==============================
-" General settings for all files
-" ==============================
+" -------- General --------
 
 filetype plugin indent on
 set nocompatible
@@ -35,6 +33,7 @@ endif
 
 " installing the plugins themselves
 call plug#begin('~/.vim/bundle')
+
 Plug 'rafi/awesome-vim-colorschemes' " themes plugin 
 Plug 'vim-airline/vim-airline' " plugin airline of our environment
 Plug 'vim-airline/vim-airline-themes'
@@ -42,7 +41,13 @@ Plug 'ryanoasis/vim-devicons' " plugin for correct display of icons in projects
 Plug 'preservim/nerdtree' " file system explorer (:NERDTree)
 Plug 'tpope/vim-fugitive' " to work with git
 Plug 'tpope/vim-commentary' " allows to comment out the code (with the gcc command) 
+Plug 'LunarWatcher/auto-pairs' " For autocomplete pairs (quotes, brackets, etc.)
+Plug 'maxboisvert/vim-simple-complete' " Simple autocomplete, suitable for everything
+
+
+" -------- Markdown --------
 Plug 'shime/vim-livedown' " for Markdown files compiling
+
 call plug#end()
 
 " set environment dark theme
@@ -66,10 +71,7 @@ endif
 nnoremap <leader>t :NERDTreeToggle<CR>
 
 
-" =======================
-" Formatting Python Files
-" =======================
-
+" -------- Python --------
 " tabs in the file are formatted to spaces
 " set vertical column according to PEP8 
 au FileType python set tabstop=4 
@@ -82,10 +84,7 @@ au FileType python set tabstop=4
 au FileType python highlight ColorColumn ctermbg=8
 
 
-" ========================= 
-" Formatting markdown files
-" =========================
-
+" -------- Markdown --------
 " to preview the Markdown file, press the keyboard shortcut \md
 nnoremap <leader>md :LivedownToggle<CR>
 
