@@ -82,7 +82,10 @@ au FileType python set tabstop=4
 	\ fileformat=unix
 	\ colorcolumn=80
 
-au FileType python highlight ColorColumn ctermbg=8
+au FileType python highlight ColorColumn ctermbg=
+
+" auto closing of the preview window
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " press \g to fail in the method or library
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -91,4 +94,3 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " -------- Markdown --------
 " to preview the Markdown file, press the keyboard shortcut \md
 nnoremap <leader>md :LivedownToggle<CR>
-
