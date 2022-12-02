@@ -83,6 +83,8 @@ au FileType python set tabstop=4
 	\ colorcolumn=80
 
 au FileType python highlight ColorColumn ctermbg=8
+
+" press \g to fail in the method or library
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
