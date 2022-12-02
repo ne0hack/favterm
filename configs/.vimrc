@@ -41,8 +41,7 @@ Plug 'preservim/nerdtree' " file system explorer (:NERDTree)
 Plug 'tpope/vim-fugitive' " to work with git
 Plug 'tpope/vim-commentary' " allows to comment out the code (with the gcc command) 
 Plug 'LunarWatcher/auto-pairs' " For autocomplete pairs (quotes, brackets, etc.)
-Plug 'maxboisvert/vim-simple-complete' " Simple autocomplete, suitable for everything
-
+Plug 'ycm-core/YouCompleteMe' " autocomplete languages
 
 " -------- Markdown --------
 Plug 'shime/vim-livedown' " for Markdown files compiling
@@ -84,6 +83,7 @@ au FileType python set tabstop=4
 	\ colorcolumn=80
 
 au FileType python highlight ColorColumn ctermbg=8
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 " -------- Markdown --------

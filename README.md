@@ -30,6 +30,7 @@ I like to work with the terminal and customize it, this repository contains most
 3. Install all required plugins.
     ```bash
     vim +PlugInstall +qall
+    python3 ~/.vim/bundle/YouCompleteMe/install.py
     ```
 4. _Installing the font._ This step is individual depending on the operating system and using you terminal vim or gui vim. You need to download [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (my favorite is _[Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))_ and if you are using a terminal, then change the font in the settings of the terminal itself, and if gui then change the font name to yours in the `.vimrc` file (comments are present). 
 
