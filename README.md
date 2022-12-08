@@ -27,7 +27,7 @@ I like to work with the terminal and customize it, this repository contains most
     cp ./configs/.vimrc ~/.vimrc
     ```
 
-3. Install all required plugins.
+3. Install the [package manager](https://github.com/junegunn/vim-plug) for vim and then enter the commands to install the plugins.
     ```bash
     vim +PlugInstall +qall
     python3 ~/.vim/bundle/YouCompleteMe/install.py
