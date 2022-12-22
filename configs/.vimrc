@@ -44,12 +44,18 @@ Plug 'LunarWatcher/auto-pairs' " For autocomplete pairs (quotes, brackets, etc.)
 Plug 'ycm-core/YouCompleteMe' " autocomplete languages
 
 " -------- Markdown --------
-Plug 'shime/vim-livedown' " for Markdown files compiling
+Plug 'shime/vim-livedown' " Markdown files compiling
+
+" -------- PlantUML --------
+Plug 'weirongxu/plantuml-previewer.vim' " PlantUML files compiling
+" dependencies from https://github.com/weirongxu/plantuml-previewer.vim#dependencies 
+Plug 'tyru/open-browser.vim'  
+Plug 'aklt/plantuml-syntax' 
 
 call plug#end()
 
 " set environment dark theme
-colorscheme challenger_deep
+colorscheme challenger_deep 
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
@@ -87,10 +93,13 @@ au FileType python highlight ColorColumn ctermbg=8
 " auto closing of the preview window
 let g:ycm_autoclose_preview_window_after_completion=1
 
-" press \g to fail in the method or library
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 
 " -------- Markdown --------
 " to preview the Markdown file, press the keyboard shortcut \md
 nnoremap <leader>md :LivedownToggle<CR>
+
+
+" -------- PlantUML --------
+" to preview the PlantUML file, press the keyboard shortcut \p
+nnoremap <leader>p :PlantumlOpen<CR>
+
