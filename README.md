@@ -32,7 +32,12 @@ I like to work with the terminal and customize it, this repository contains most
     vim +PlugInstall +qall
     python3 ~/.vim/bundle/YouCompleteMe/install.py
     ```
-4. _Installing the font._ This step is individual depending on the operating system and using you terminal vim or gui vim. You need to download [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (my favorite is _[Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))_ and if you are using a terminal, then change the font in the settings of the terminal itself, and if gui then change the font name to yours in the `.vimrc` file (comments are present). 
+
+4. To compile correctly and work ["weirongxu/plantuml-previewer.vim"](https://github.com/weirongxu/plantuml-previewer.vim) make sure that you install [dependencies](https://github.com/weirongxu/plantuml-previewer.vim#dependencies).
+
+_Installing the font._
+
+5. This step is individual depending on the operating system and using you terminal vim or gui vim. You need to download [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (my favorite is _[Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))_ and if you are using a terminal, then change the font in the settings of the terminal itself, and if gui then change the font name to yours in the `.vimrc` file (comments are present). 
 
 🎉 All is ready! Now, when you run the `vim` command, it will open with the configuration installed. Enjoy 😄
 
