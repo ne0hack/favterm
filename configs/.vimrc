@@ -66,6 +66,13 @@ let g:airline_powerline_fonts=1 " enable support for Powerline fonts
 let g:airline_section_z="%l/%L:%c" " custom cursor position graph
 let g:airline#extensions#whitespace#enabled=0 " removes the tralling display
 let g:airline_enable_fugitive=1 " integration with fugitiv plugin
+" will replace the icons
+" (leaves the airline beautiful even if the icons are not pulled up)
+let g:airline_left_alt_sep = '»'
+let g:airline_right_alt_sep = '«'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+
 
 " if you are using vim via terminal, change the font in terminal settings
 " if you are using Vim via Gui change the name to your font
