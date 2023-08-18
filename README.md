@@ -2,7 +2,7 @@
 
 
 ## Disclaimer
-All config and installation of plugins was carried out on MacOS. Therefore, feel free to go into the [configuration files](https://github.com/AlekseevDanil/vim-python/blob/main/.vimrc) to change it to suit your needs, and you can also change the hotkeys for yourself there. Good luck with your work!
+All config and installation of plugins was carried out on MacOS. Therefore, feel free to go into the [configuration files](https://github.com/AlekseevDanil/vim-python/blob/main/.vimrc) to change it to suit your needs, and you can also change the hotkeys for yourself there. Restart your terminal after each setting. Good luck with your work!
 
 ## Owerview
 I like to work with the terminal and customize it, this repository contains most of my settings and instructions for installing them.
@@ -12,9 +12,7 @@ I like to work with the terminal and customize it, this repository contains most
 
 ## Instalation
 ### Zsh
-1. First install [neofetch](https://github.com/dylanaraps/neofetch) on your computer.
-
-2. Move the `.zshrc` file to the user's directory with this command:
+1. Move the `.zshrc` file to the user's directory with this command:
     ```bash
     cp ./configs/.zshrc ~/.zshrc
     ```
@@ -30,17 +28,7 @@ I like to work with the terminal and customize it, this repository contains most
 3. Install the [package manager](https://github.com/junegunn/vim-plug) for vim and then enter the commands to install the plugins.
     ```bash
     vim +PlugInstall +qall
-    python3 ~/.vim/bundle/YouCompleteMe/install.py
     ```
 
-4. To compile correctly and work ["weirongxu/plantuml-previewer.vim"](https://github.com/weirongxu/plantuml-previewer.vim) make sure that you install [dependencies](https://github.com/weirongxu/plantuml-previewer.vim#dependencies).
-
-_Installing the font._
-
-5. This step is individual depending on the operating system and using you terminal vim or gui vim. You need to download [Nerd Font](https://github.com/ryanoasis/nerd-fonts) (my favorite is _[Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack))_ and if you are using a terminal, then change the font in the settings of the terminal itself, and if gui then change the font name to yours in the `.vimrc` file (comments are present). 
-
 🎉 All is ready! Now, when you run the `vim` command, it will open with the configuration installed. Enjoy 😄
-
-## In addition 
-All plugins list can be found [here](https://github.com/stars/AlekseevDanil/lists/vim-plugins).
 

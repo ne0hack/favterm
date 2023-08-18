@@ -1,6 +1,3 @@
-" Created by Alekseev Danil 2022 (ᵔ◡ᵔ)
-
-
 " -------- General --------
 filetype plugin indent on
 set nocompatible
@@ -33,6 +30,7 @@ endif
 " installing the plugins themselves
 call plug#begin('~/.vim/bundle')
 
+" -------- General --------
 Plug 'rafi/awesome-vim-colorschemes' " themes plugin 
 Plug 'vim-airline/vim-airline' " plugin airline of our environment
 Plug 'vim-airline/vim-airline-themes'
@@ -41,16 +39,10 @@ Plug 'preservim/nerdtree' " file system explorer (:NERDTree)
 Plug 'tpope/vim-fugitive' " to work with git
 Plug 'tpope/vim-commentary' " allows to comment out the code (with the gcc command) 
 Plug 'LunarWatcher/auto-pairs' " For autocomplete pairs (quotes, brackets, etc.)
-Plug 'ycm-core/YouCompleteMe' " autocomplete languages
+Plug 'maxboisvert/vim-simple-complete' " Simple autocomplete, suitable for everything
 
 " -------- Markdown --------
 Plug 'shime/vim-livedown' " Markdown files compiling
-
-" -------- PlantUML --------
-Plug 'weirongxu/plantuml-previewer.vim' " PlantUML files compiling
-" dependencies from https://github.com/weirongxu/plantuml-previewer.vim#dependencies 
-Plug 'tyru/open-browser.vim'  
-Plug 'aklt/plantuml-syntax' 
 
 call plug#end()
 
@@ -60,12 +52,12 @@ colorscheme challenger_deep
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
-let g:airline_theme='angr' " airline theme
 let g:Powerline_symbols='unicode' " unicode support
 let g:airline_powerline_fonts=1 " enable support for Powerline fonts
 let g:airline_section_z="%l/%L:%c" " custom cursor position graph
 let g:airline#extensions#whitespace#enabled=0 " removes the tralling display
 let g:airline_enable_fugitive=1 " integration with fugitiv plugin
+
 " will replace the icons
 " (leaves the airline beautiful even if the icons are not pulled up)
 let g:airline_left_alt_sep = '»'
@@ -73,13 +65,6 @@ let g:airline_right_alt_sep = '«'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
-
-" if you are using vim via terminal, change the font in terminal settings
-" if you are using Vim via Gui change the name to your font
-" suitable fonts can be found here: https://github.com/ryanoasis/nerd-fonts
-if has("gui_running")
-    set guifont="Hack Regular Nerd Font Complete Mono":h14 " font name:size
-endif
 
 " assign a hotkey to open/close NERDTree (\t)
 nnoremap <leader>t :NERDTreeToggle<CR>
@@ -104,9 +89,4 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " -------- Markdown --------
 " to preview the Markdown file, press the keyboard shortcut \md
 nnoremap <leader>md :LivedownToggle<CR>
-
-
-" -------- PlantUML --------
-" to preview the PlantUML file, press the keyboard shortcut \p
-nnoremap <leader>p :PlantumlOpen<CR>
 
