@@ -46,9 +46,6 @@ Plug 'shime/vim-livedown' " Markdown files compiling
 
 call plug#end()
 
-" set environment dark theme
-colorscheme challenger_deep 
-
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
@@ -78,7 +75,7 @@ au FileType python set tabstop=4
 	\ shiftwidth=4 
 	\ expandtab 
 	\ fileformat=unix
-	\ colorcolumn=80
+	\ colorcolumn=120
 
 au FileType python highlight ColorColumn ctermbg=8
 
