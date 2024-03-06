@@ -3,6 +3,7 @@ filetype plugin indent on
 set nocompatible
 set backspace=indent,eol,start " enable backspace work
 set encoding=UTF-8
+set updatetime=100
 syntax enable " turn on language highlight
 set noswapfile " remove the creation of .swp files
 set number " includes line numbering
@@ -31,15 +32,16 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " -------- General --------
-Plug 'rafi/awesome-vim-colorschemes' " themes plugin 
 Plug 'vim-airline/vim-airline' " plugin airline of our environment
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons' " plugin for correct display of icons in projects
 Plug 'preservim/nerdtree' " file system explorer (:NERDTree)
-Plug 'tpope/vim-fugitive' " to work with git
 Plug 'tpope/vim-commentary' " allows to comment out the code (with the gcc command) 
 Plug 'LunarWatcher/auto-pairs' " For autocomplete pairs (quotes, brackets, etc.)
 Plug 'maxboisvert/vim-simple-complete' " Simple autocomplete, suitable for everything
+
+" -------- GIT --------
+Plug 'tpope/vim-fugitive' " to work with git
+Plug 'mhinz/vim-signify', { 'tag': 'legacy' } " shows git changes in a separate column
+Plug 'Eliot00/git-lens.vim' " shows git lens
 
 " -------- Markdown --------
 Plug 'shime/vim-livedown' " Markdown files compiling
@@ -66,7 +68,6 @@ let g:airline_right_sep = '◀'
 " assign a hotkey to open/close NERDTree (\t)
 nnoremap <leader>t :NERDTreeToggle<CR>
 
-
 " -------- Python --------
 " tabs in the file are formatted to spaces
 " set vertical column according to PEP8 
@@ -82,8 +83,10 @@ au FileType python highlight ColorColumn ctermbg=8
 " auto closing of the preview window
 let g:ycm_autoclose_preview_window_after_completion=1
 
+" -------- GIT --------
+" assign a hotkey to activate/deactivate Git-lens
+nnoremap <leader>g :call ToggleGitLens()<CR>
 
 " -------- Markdown --------
 " to preview the Markdown file, press the keyboard shortcut \md
 nnoremap <leader>md :LivedownToggle<CR>
-
